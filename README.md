@@ -34,7 +34,7 @@ At Imperium, we pride ourselves on providing innovative and cost-effective solut
 
 ## Support
 
-If you have any questions or issues with the Imperium Environmental Monitoring HAT, please contact our support team at support@imperium.com.
+If you have any questions or issues with the Imperium Environmental Monitoring HAT, please contact our support team at imperiumuct@gmail.com.
 
 ## License
 
