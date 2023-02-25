@@ -38,4 +38,7 @@ If you have any questions or issues with the Imperium Environmental Monitoring H
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the [MIT License](LICENSE.txt).
+
+© 2023 Rumbizdai Mashumba, Phomolo Makina, and Travimadox Webb.
+
