@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>C:\Users\Rumbidzai Mashumba\OneDrive - University of Cape Town\Desktop\2023\EEE3088\Project\stm32-envirosensing-hat\PCB\STM32SENSEHAT\STM32SENSEHAT.kicad_sch</source>
-    <date>2023/03/04 12:49:09</date>
+    <source>C:\Users\User\OneDrive - University of Cape Town\Desktop\EEE3088F\SENSEHAT KICAD\stm32-envirosensing-hat\PCB\STM32SENSEHAT\STM32SENSEHAT.kicad_sch</source>
+    <date>04 Mar 2023 17:07:04</date>
     <tool>Eeschema (7.0.0)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -1065,31 +1065,37 @@
   </libparts>
   <libraries>
     <library logical="Connector">
-      <uri>C:\Users\Rumbidzai Mashumba\OneDrive - University of Cape Town\Desktop\2023\EEE3088\Project\7.0\share\kicad\symbols\/Connector.kicad_sym</uri>
+      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Connector.kicad_sym</uri>
+    </library>
+    <library logical="DW01A">
+      <uri>C:/Users/User/Downloads/DW01A/DW01A.kicad_sym</uri>
     </library>
     <library logical="Device">
-      <uri>C:\Users\Rumbidzai Mashumba\OneDrive - University of Cape Town\Desktop\2023\EEE3088\Project\7.0\share\kicad\symbols\/Device.kicad_sym</uri>
+      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Device.kicad_sym</uri>
     </library>
     <library logical="Interface_USB">
-      <uri>C:\Users\Rumbidzai Mashumba\OneDrive - University of Cape Town\Desktop\2023\EEE3088\Project\7.0\share\kicad\symbols\/Interface_USB.kicad_sym</uri>
+      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Interface_USB.kicad_sym</uri>
     </library>
     <library logical="Memory_EEPROM">
-      <uri>C:\Users\Rumbidzai Mashumba\OneDrive - University of Cape Town\Desktop\2023\EEE3088\Project\7.0\share\kicad\symbols\/Memory_EEPROM.kicad_sym</uri>
+      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Memory_EEPROM.kicad_sym</uri>
     </library>
     <library logical="Regulator_Linear">
-      <uri>C:\Users\Rumbidzai Mashumba\OneDrive - University of Cape Town\Desktop\2023\EEE3088\Project\7.0\share\kicad\symbols\/Regulator_Linear.kicad_sym</uri>
+      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Regulator_Linear.kicad_sym</uri>
     </library>
     <library logical="Sensor">
-      <uri>C:\Users\Rumbidzai Mashumba\OneDrive - University of Cape Town\Desktop\2023\EEE3088\Project\7.0\share\kicad\symbols\/Sensor.kicad_sym</uri>
+      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Sensor.kicad_sym</uri>
     </library>
     <library logical="Sensor_Optical">
-      <uri>C:\Users\Rumbidzai Mashumba\OneDrive - University of Cape Town\Desktop\2023\EEE3088\Project\7.0\share\kicad\symbols\/Sensor_Optical.kicad_sym</uri>
+      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Sensor_Optical.kicad_sym</uri>
     </library>
     <library logical="Sensor_Temperature">
-      <uri>C:\Users\Rumbidzai Mashumba\OneDrive - University of Cape Town\Desktop\2023\EEE3088\Project\7.0\share\kicad\symbols\/Sensor_Temperature.kicad_sym</uri>
+      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Sensor_Temperature.kicad_sym</uri>
     </library>
     <library logical="Simulation_SPICE">
-      <uri>C:\Users\Rumbidzai Mashumba\OneDrive - University of Cape Town\Desktop\2023\EEE3088\Project\7.0\share\kicad\symbols\/Simulation_SPICE.kicad_sym</uri>
+      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Simulation_SPICE.kicad_sym</uri>
+    </library>
+    <library logical="TP4056">
+      <uri>C:/Users/User/Downloads/TP4056/TP4056.kicad_sym</uri>
     </library>
   </libraries>
   <nets>
