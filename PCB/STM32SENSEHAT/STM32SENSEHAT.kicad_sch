@@ -1,0 +1,65 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid e47212d5-bd6f-4bb8-9ec7-12aac08f34b5)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 36.83 97.79) (size 55.88 59.69) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 255 0 1.0000))
+    (uuid 56d6f664-4539-4797-b30e-e636c223ccb0)
+    (property "Sheetname" "SENSOR MODULE" (at 36.83 97.0784 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "sensor.kicad_sch" (at 36.83 158.0646 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "STM32SENSEHAT"
+        (path "/e47212d5-bd6f-4bb8-9ec7-12aac08f34b5" (page "3"))
+      )
+    )
+  )
+
+  (sheet (at 137.16 22.86) (size 69.85 134.62) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 255 0 1.0000))
+    (uuid 8fedf9e5-f663-4f34-96fe-3613b2b14be8)
+    (property "Sheetname" "MCU MODULE" (at 137.16 22.1484 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "mcu.kicad_sch" (at 137.16 158.0646 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "STM32SENSEHAT"
+        (path "/e47212d5-bd6f-4bb8-9ec7-12aac08f34b5" (page "4"))
+      )
+    )
+  )
+
+  (sheet (at 34.29 22.86) (size 57.15 54.61) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 255 0 1.0000))
+    (uuid e2c75964-4e94-4a3b-9ddf-38bb01f2971b)
+    (property "Sheetname" "POWER MANAGEMENT MODULE" (at 34.29 22.1484 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "power.kicad_sch" (at 34.29 78.0546 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "STM32SENSEHAT"
+        (path "/e47212d5-bd6f-4bb8-9ec7-12aac08f34b5" (page "2"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
