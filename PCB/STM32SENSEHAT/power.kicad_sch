@@ -2548,7 +2548,7 @@
     (effects (font (size 2.5 2.5) (thickness 0.5) bold) (justify left bottom))
     (uuid 0085bdf3-04df-4c27-abf0-7c6143287d6b)
   )
-  (text "BATTERY MANAGMENT SYSTEM\n" (at 143.51 20.32 0)
+  (text "BATTERY MANAGEMENT SYSTEM\n" (at 143.51 20.32 0)
     (effects (font (size 2.5 2.5) (thickness 0.5) bold) (justify left bottom))
     (uuid 0de831cd-a4f4-4a19-aa8b-bcbc75671171)
   )
