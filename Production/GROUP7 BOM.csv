@@ -1,7 +1,7 @@
 ﻿Comment,Designator,Footprint,JLCPCB Part #
 10nF,C2,Capacitor_SMD:C_0805_2012Metric,C1710
 1k0,"R22,R4,R7,R40",Resistor_SMD:R_0805_2012Metric,C17513
-USB_B_Micro,"J1,J3","footprints:USB_Conn_JLC_LCSC_C404969,C404969",
+USB_B_Micro,"J1,J3",footprints:USB_Conn_JLC_LCSC_C404969,C404969
 10uF,"C20,C21",Capacitor_SMD:C_0805_2012Metric,C15850
 4k7,"R15,R18",Resistor_SMD:R_0805_2012Metric,C17673
 1uF,C12,Capacitor_SMD:C_0805_2012Metric,C28323
