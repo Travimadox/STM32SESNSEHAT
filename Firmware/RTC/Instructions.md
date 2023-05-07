@@ -49,3 +49,35 @@ In your code, call the `RTC_GetTime()` function to get the RTC time. The functio
 Use the values of the `hours`, `minutes`, and `seconds` variables as needed in your program.
 
 Note: The RTC module needs an external battery to retain the time when the device is powered off. The battery must be connected to the Vbat pin of the STM32 microcontroller.
+
+## Example:
+Below is an example:
+```c
+    #include "rtc.h"
+
+int main(void) {
+    RTC_HandleTypeDef hrtc;
+    uint8_t hours = 12;
+    uint8_t minutes = 30;
+    uint8_t seconds = 0;
+    HAL_StatusTypeDef status = RTC_SetTime(&hrtc, hours, minutes, seconds);
+    if (status != HAL_OK) {
+        // Handle error
+    }
+
+    uint8_t read_hours, read_minutes, read_seconds;
+    status = RTC_GetTime(&hrtc, &read_hours, &read_minutes, &read_seconds);
+    if (status != HAL_OK) {
+        // Handle error
+    }
+
+    // Use the read hours, minutes and seconds values
+    // ...
+
+    while (1) {
+        // Main loop
+    }
+}
+
+
+```
