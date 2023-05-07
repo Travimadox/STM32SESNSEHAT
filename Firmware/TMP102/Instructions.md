@@ -31,4 +31,72 @@ Follow these steps to add the TMP102 library files to your project:
 In the `main.c` file of your project, add the following include statement at the beginning of the file, along with other include statements:
 
 ```c
+Copy code
 #include "tmp102.h"
+```
+## Step 4: Initialize the I2C interface
+
+Before using the TMP102 sensor, you need to initialize the I2C interface. This can be done using the `HAL_I2C_Init()` function provided by the STM32 HAL library. Here's an example:
+
+```c
+Copy code
+I2C_HandleTypeDef hi2c1;
+
+void SystemClock_Config(void);
+
+int main(void) {
+  // Initialize HAL and system clock
+  HAL_Init();
+  SystemClock_Config();
+
+  // Initialize I2C1
+  hi2c1.Instance = I2C1;
+  hi2c1.Init.Timing = 0x00707CBB;
+  hi2c1.Init.OwnAddress1 = 0;
+  hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+  hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+  hi2c1.Init.OwnAddress2 = 0;
+  hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
+  hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
+  if (HAL_I2C_Init(&hi2c1) != HAL_OK) {
+    Error_Handler();
+  }
+}
+```
+
+## Step 5: Initialize the TMP102 sensor and read Temperature Value
+After initializing the I2C interface, you can now initialize the TMP102 sensor. This can be done using the TMP102_Init() function provided by the library. Here's an example:
+
+```c
+Copy code
+#include "tmp102.h"
+
+I2C_HandleTypeDef hi2c1;
+
+int main(void)
+{
+  HAL_Init();
+  MX_I2C1_Init();
+  
+  // Initialize TMP102 sensor
+  TMP102_Init(&hi2c1);//Use the I2C handle intiliased
+  while (1)
+  {
+    // Read temperature value
+    float temperature = TMP102_ReadTemperature(&hi2c1);
+    
+    // Do something with temperature value
+  }
+}
+
+  ```
+
+  
+
+
+
+
+
+
+
+

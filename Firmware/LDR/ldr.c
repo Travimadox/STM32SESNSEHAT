@@ -1,9 +1,10 @@
-/*
- * LDR Library Source
- * Author: Travimadox Webb
- * Position: Embedded Software Engineer
- * Company: Imperium LLC
- * Date: 6th of May 2023
+/**
+ * @file ldr.c
+ * @brief LDR Library Source
+ * @author Travimadox Webb
+ * @position Embedded Software Engineer
+ * @company Imperium LLC
+ * @date 6th of May 2023
  */
 
 #include "ldr.h"
@@ -12,16 +13,19 @@
 static float m;
 static float c;
 
-// Initialize the LDR with calibration constants
+/**
+ * @brief Initialize the LDR with calibration constants
+ */
 void LDR_Init(void) {
     m = 2.675f;
     c = -66.88f;
 }
 
-// Read ADC value from the LDR
-// hadc: pointer to an ADC_HandleTypeDef structure that contains
-// the configuration information for the specified ADC
-// returns: 32-bit unsigned integer ADC value
+/**
+ * @brief Read ADC value from the LDR
+ * @param hadc Pointer to an ADC_HandleTypeDef structure that contains the configuration information for the specified ADC
+ * @return 32-bit unsigned integer ADC value
+ */
 uint32_t LDR_ReadADC(ADC_HandleTypeDef *hadc) {
     uint32_t adc_value;
 
@@ -40,10 +44,11 @@ uint32_t LDR_ReadADC(ADC_HandleTypeDef *hadc) {
     return adc_value;
 }
 
-// Read analog light intensity using the LDR
-// hadc: pointer to an ADC_HandleTypeDef structure that contains
-// the configuration information for the specified ADC
-// returns: floating-point light intensity value
+/**
+ * @brief Read analog light intensity using the LDR
+ * @param hadc Pointer to an ADC_HandleTypeDef structure that contains the configuration information for the specified ADC
+ * @return Floating-point light intensity value
+ */
 float LDR_ReadAnalogLightIntensity(ADC_HandleTypeDef *hadc) {
     uint32_t adc_value = LDR_ReadADC(hadc);
     return m * adc_value + c;

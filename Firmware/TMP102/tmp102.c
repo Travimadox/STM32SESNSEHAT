@@ -1,9 +1,11 @@
-/*
- * TMP102 Temperature Sensor Library
- * Author: Travimadox Webb
- * Postion: Embedded Software Engineer
- * Company: Imperium LLC
- * Date: 6th of May 2023
+
+/**
+ * @file tmp102.c
+ * @brief TMP102 Temperature Sensor Library
+ * @author Travimadox Webb
+ * @position Embedded Software Engineer
+ * @company Imperium LLC
+ * @date 6th of May 2023
  */
 
 #include "tmp102.h"

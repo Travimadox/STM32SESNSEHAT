@@ -32,3 +32,39 @@ In the `main.c` file of your project, add the following include statement at the
 
 ```c
 #include "ldr.h"
+```
+
+## Step 4: Initialize the LDR in main.c(sets the calibration constants)
+In the`main.c` function of your project, call the `LDR_Init()` function to initialize the LDR:
+```c
+Copy code
+int main(void)
+{
+    // Initialize peripherals, system clock, etc.
+
+    // Initialize LDR
+    LDR_Init();
+
+    // Other code
+}
+```
+
+## Step 5: Read analog light intensity in main.c
+To read the analog light intensity using the LDR, call the `LDR_ReadAnalogLightIntensity()` function in your code:
+```c
+Copy code
+int main(void)
+{
+    // Initialize peripherals, system clock, etc.
+
+    // Initialize LDR
+    LDR_Init();
+
+    // Read analog light intensity
+    float light_intensity = LDR_ReadAnalogLightIntensity(&hadc);
+
+    // Other code
+}
+
+```
+Again, `hadc` is a handle to the ADC peripheral that you should have already initialized in your project.
