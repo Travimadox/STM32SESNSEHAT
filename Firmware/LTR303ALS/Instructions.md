@@ -1,4 +1,4 @@
-# LTR-303ALS Ambient Light Sensor Library Usage
+# LTR-303ALS Ambient Light Sensor Integration Guide
 
 This guide will help you integrate the `ltr303als.h` and `ltr303als.c` files into your STM32 project using the LTR-303ALS Ambient Light Sensor.
 
@@ -20,7 +20,7 @@ Download the following files:
 In the source file where you want to use the LTR-303ALS library (usually `main.c`), add the following line at the beginning of the file:
 
 ```c
-Copy code
+
 #include "ltr303als.h"
 ```
 
@@ -29,7 +29,7 @@ Copy code
 Initialize the LTR-303ALS sensor by calling the `LTR303ALS_Init` function, passing a pointer to an `I2C_HandleTypeDef` structure and the desired integration time and measurement rate.
 
 ```c
-Copy code
+
 I2C_HandleTypeDef hi2c1; // This should be configured and initialized using HAL
 
 if (LTR303ALS_Init(&hi2c1, INTEGRATION_TIME, MEASUREMENT_RATE) != HAL_OK) {
@@ -42,7 +42,7 @@ if (LTR303ALS_Init(&hi2c1, INTEGRATION_TIME, MEASUREMENT_RATE) != HAL_OK) {
 To read the light intensity from the sensor, call the `LTR303ALS_ReadLightIntensity` function, passing a pointer to an `I2C_HandleTypeDef` structure and pointers to two `uint16_t` variables that will store the values of channels 0 and 1.
 
 ```c
-Copy code
+
 uint16_t ch0, ch1;
 
 if (LTR303ALS_ReadLightIntensity(&hi2c1, &ch0, &ch1) != HAL_OK) {

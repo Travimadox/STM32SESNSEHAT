@@ -31,7 +31,7 @@ Follow these steps to add the TMP102 library files to your project:
 In the `main.c` file of your project, add the following include statement at the beginning of the file, along with other include statements:
 
 ```c
-Copy code
+
 #include "tmp102.h"
 ```
 ## Step 4: Initialize the I2C interface
@@ -39,7 +39,7 @@ Copy code
 Before using the TMP102 sensor, you need to initialize the I2C interface. This can be done using the `HAL_I2C_Init()` function provided by the STM32 HAL library. Here's an example:
 
 ```c
-Copy code
+
 I2C_HandleTypeDef hi2c1;
 
 void SystemClock_Config(void);
@@ -68,7 +68,7 @@ int main(void) {
 After initializing the I2C interface, you can now initialize the TMP102 sensor. This can be done using the TMP102_Init() function provided by the library. Here's an example:
 
 ```c
-Copy code
+
 #include "tmp102.h"
 
 I2C_HandleTypeDef hi2c1;
