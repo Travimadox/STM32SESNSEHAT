@@ -20,6 +20,9 @@
 #include "math.h"
 #include "string.h"
 
+uint8_t bytes_temp[4];  // Temporary array to store the bytes of the float value
+
+
 // Define the I2C
 extern I2C_HandleTypeDef hi2c1;
 #define EEPROM_I2C &hi2c1
