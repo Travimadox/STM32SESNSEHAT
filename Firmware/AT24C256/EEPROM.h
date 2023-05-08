@@ -20,7 +20,7 @@
 #define INC_EEPROM_H_
 
 #include "stdint.h"
-#include "stm32f4xx_hal.h"
+#include "stm32f0xx_hal.h"
 
 /**
   * @brief  Write data to the EEPROM.
