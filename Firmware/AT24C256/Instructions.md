@@ -56,7 +56,7 @@ EEPROM_Read(0, 0, read_buffer, sizeof(read_buffer));
 EEPROM_PageErase(2);
 ```
 
-### COmprenhensive example on how to use it in main.c
+### Comprenhensive example on how to use it in main.c
 
 ```c
 #include "main.h"
