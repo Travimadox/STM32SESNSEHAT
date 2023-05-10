@@ -37,3 +37,8 @@ Follow these steps to set up the system clock
 
 
 ![STM32CubeIDE System Clock Configuration](https://imgur.com/IcynAkS.jpg)
+
+
+# 4.Setting up RTC peripherals in STM32CubeIDE
+
+Coming soon😁😁😁
