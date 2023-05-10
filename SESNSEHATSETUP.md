@@ -9,7 +9,7 @@ Follow this steps to set up you SENSEHAT.
   2. Let the battery charge for an hour, the green LED will go on when fully charged.
   3. Unplug the power supply and plug in the STM32F0 to the SENSEHAT as shown below.
   
-  ![Connecting_STM32F0_to_SENSEHAT](./STM32_board.jpg)
+  ![Connecting_STM32F0_to_SENSEHAT](https://imgur.com/jDwVCAp.jpg)
   
 ### Step2. Include libraries to the SENSEHAT.
   1. Download and include the LDR files by following this [instructions](https://github.com/Travimadox/STM32SESNSEHAT/tree/main/Firmware).
@@ -21,18 +21,18 @@ Follow this steps to set up you SENSEHAT.
   1. Download test [files](https://github.com/Travimadox/STM32SESNSEHAT/blob/main/Firmware/SENSEHATLIBTESTS.zip).
   2. Copy the file directory.
   
-  ![Copying directory](./copy_directory.png)
+  ![Copying directory](https://imgur.com/flXyq9m.jpg)
   
   3. Go to file in the STM32cubeIDE, select "Open projects from file system".
   
-  ![Opening project](./Open_projects.png)
+  ![Opening project](https://imgur.com/aRxXnUd.jpg)
   
   4. In the open dialogue, paste the file directory in the "import source" block.
   
-  ![Pasting file directory](./Pates_link_in_dialog.png)
+  ![Pasting file directory](https://imgur.com/NZ3Mk1j.jpg)
   5. Expand the Libraries folder>>SENSEHATEEPROMTEST>>core>>Src then open the main.c file.
   
-  ![Opening main.c file](./Open_main.c_file.png)
+  ![Opening main.c file](https://imgur.com/gXpqbmc.jpg)
   
   6. Run the code!
   7. Follow the steps **2-to-6** above to test for other libraries.
