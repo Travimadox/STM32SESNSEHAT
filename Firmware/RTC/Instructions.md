@@ -48,7 +48,7 @@ In your code, call the `RTC_GetTime()` function to get the RTC time. The functio
 
 Use the values of the `hours`, `minutes`, and `seconds` variables as needed in your program.
 
-Note: The RTC module needs an external battery to retain the time when the device is powered off. The battery must be connected to the Vbat pin of the STM32 microcontroller.
+Note: The RTC module needs an external battery to retain the time when the device is powered off. The battery must be connected to the Vbat pin of the STM32 microcontroller. An external battery is not used in our setup so the time needs to be reset every time the STM32 goes off. However an external battery can be implemented to overcome this.
 
 ## Example:
 Below is an example:
