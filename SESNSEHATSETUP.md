@@ -1,7 +1,7 @@
 # Setting up the SENSEHAT for the first time.
 
 ### STEP1. Powering and setting up the SENSEHAT hardware.
-**CAUTION:** Ensure that the power source supplies maximum of 5V at 3mA.
+**CAUTION:** Ensure that the power source supplies at least 5V at 1A.
 
 Follow this steps to set up you SENSEHAT.
 
