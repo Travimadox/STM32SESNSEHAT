@@ -42,8 +42,8 @@ Follow this steps to set up you SENSEHAT.
   
   ![Debugger](https://imgur.com/ZuuBLmn.jpg)
   
-  2. Download the intergrating files [here]().
-  3. Open the files in STM32cubeIDE by following steps 2-to-5 in **Step3** above.
+  2. Download the intergrating drivers here: [STM32SenseHatDriver]().
+  3. Open the files in STM32cubeIDE by following steps 2-to-5 in `Step3` above.
   4. Build and run the main.c file. You should see the debugger light flashing, wait till the following displays in console.
   
   ![Finish_message]().
