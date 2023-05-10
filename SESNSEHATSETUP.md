@@ -36,3 +36,7 @@ Follow this steps to set up you SENSEHAT.
   
   6. Run the code!
   7. Follow the steps **2-to-6** above to test for other libraries.
+
+### Step 4: Implementation of Sensehat full Functionality
+
+COMING SOON
