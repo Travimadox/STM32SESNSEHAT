@@ -38,5 +38,17 @@ Follow this steps to set up you SENSEHAT.
   7. Follow the steps **2-to-6** above to test for other libraries.
 
 ### Step 4: Implementation of Sensehat full Functionality
+  1. Connect the SENSEHAT to the PC via a USB cable. The debugger light should go on as shown below.
+  
+  ![Debugger](https://imgur.com/ZuuBLmn.jpg)
+  
+  2. Download the intergrating files [here]().
+  3. Open the files in STM32cubeIDE by following steps 2-to-5 in **Step3** above.
+  4. Build and run the main.c file. You should see the debugger light flashing, wait till the following displays in console.
+  
+  ![Finish_message]().
+  
+  5. Your SENSEHAT is now ready! You can disconnect and place it in the environment of you choice.
 
-COMING SOON
+# FAQ
+Should you encounter problems while setting up your SENSEHAT, please visit our [FAQ]() or alternately watch the video on [How to setup SENSEHAT]().
