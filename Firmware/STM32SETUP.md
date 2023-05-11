@@ -41,4 +41,31 @@ Follow these steps to set up the system clock
 
 # 4.Setting up RTC peripherals in STM32CubeIDE
 
-Coming soon😁😁😁
+## Setting up System clock
+Follow these steps to set up the system clock
+
+1. Open your project in STM32CubeIDE.
+2. Click on the "Pinout & Configuration" tab, usually located at the bottom of the window.
+3. Navigate to the "System Core" section in the left-hand menu.
+4. Locate "RCC" and expand its options then select High Speed Clock and Low Speed Clock then choose source as Crystal Ceramic Oscillator.
+5. For reference, you can refer to the image below:
+
+![STM32CubeIDE System Clock Configuration](https://imgur.com/fCryHur.jpg)
+
+## Setting the RTC Timer
+Follow these steps to set up the RTC Timer:
+
+1. Open your project in STM32CubeIDE.
+2. Click on the "Pinout & Configuration" tab, usually located at the bottom of the window.
+3. Navigate to the "Timers" section in the left-hand menu.
+4. Locate "RTC" and expand its options then Activate clock source and calendar. No need to set the date and time as this catered for by the library functions.
+5. For reference, you can refer to the image below:
+
+![STM32CubeIDE RTC TIMER Configuration](https://imgur.com/ctcmJdC.jpg)
+
+
+## Clock Configuration
+Change the HCLK to 48MHz as shown below:
+
+![STM32CubeIDE Clock Configuration](https://imgur.com/e8fyvbw.jpg)
+
