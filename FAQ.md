@@ -10,7 +10,7 @@ The key features include high-precision sensors for temperature, humidity, atmos
 
 **3. How do I get started with the Imperium Environmental Monitoring HAT?**
 
-To start, connect it to your STM32 microcontroller using the provided pins. Download our library and follow the included instructions to begin collecting data. Detailed setup instructions can be found in our [setup guide](link_to_setup_guide).
+To start, connect it to your STM32 microcontroller using the provided pins. Download our library and follow the included instructions to begin collecting data. Detailed setup instructions can be found in our [setup guide](SESNSEHATSETUP.md).
 
 **4. How can I customize the Imperium Environmental Monitoring HAT?**
 
@@ -34,7 +34,7 @@ Download and include the necessary files as per the instructions in our [setup g
 
 **9. What if I encounter problems while setting up the SENSEHAT?**
 
-Please visit our FAQ or watch the video on [How to setup SENSEHAT](link_to_video). If you still encounter issues, feel free to contact our support team.
+Watch the video on [How to setup SENSEHAT](link_to_video). If you still encounter issues, feel free to contact our support team.
 
 **10. What does the Imperium Environmental Monitoring HAT cost?**
 
