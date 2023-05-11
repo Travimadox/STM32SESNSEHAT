@@ -69,3 +69,12 @@ Change the HCLK to 48MHz as shown below:
 
 ![STM32CubeIDE Clock Configuration](https://imgur.com/e8fyvbw.jpg)
 
+
+# Step 5: .Setting up UART peripherals in STM32CubeIDE
+
+Coming soon
+
+# Step 6: .Setting up Timer Interrupts in STM32CubeIDE
+
+Coming soon
+
