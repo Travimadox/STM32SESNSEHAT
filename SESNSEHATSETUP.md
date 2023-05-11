@@ -38,6 +38,7 @@ Follow this steps to set up you SENSEHAT.
   7. Follow the steps **2-to-6** above to test for other libraries.
 
 ### Step 4: Implementation of Sensehat full Functionality
+**Still being worked on**
   1. Connect the SENSEHAT to the PC via a USB cable. The debugger light should go on as shown below.
   
   ![Debugger](https://imgur.com/ZuuBLmn.jpg)
@@ -51,4 +52,5 @@ Follow this steps to set up you SENSEHAT.
   5. Your SENSEHAT is now ready! You can disconnect and place it in the environment of you choice.
 
 # FAQ
+**Still being worked on**
 Should you encounter problems while setting up your SENSEHAT, please visit our [FAQ]() or alternately watch the video on [How to setup SENSEHAT]().
