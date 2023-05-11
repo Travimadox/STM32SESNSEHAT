@@ -53,3 +53,35 @@ HAL_StatusTypeDef RTC_GetTime(RTC_HandleTypeDef *hrtc, uint8_t *hours, uint8_t *
 
     return status;
 }
+
+/**
+
+@brief Set the RTC date
+@param hrtc Pointer to an RTC_HandleTypeDef structure that contains the configuration information for the specified RTC
+@param day The day of the month
+@param month The month
+@param year The year (from 0 to 99)
+*/
+void RTC_SetDate(RTC_HandleTypeDef *hrtc, uint8_t day, uint8_t month, uint8_t year) {
+RTC_DateTypeDef date = {0};
+date.Date = day;
+date.Month = month;
+date.Year = year;
+HAL_RTC_SetDate(hrtc, &date, RTC_FORMAT_BIN);
+}
+/**
+
+@brief Get the RTC date
+@param hrtc Pointer to an RTC_HandleTypeDef structure that contains the configuration information for the specified RTC
+@param day Pointer to store the day of the month
+@param month Pointer to store the month
+@param year Pointer to store the year
+*/
+void RTC_GetDate(RTC_HandleTypeDef *hrtc, uint8_t *day, uint8_t *month, uint8_t *year) {
+RTC_DateTypeDef date = {0};
+HAL_RTC_GetDate(hrtc, &date, RTC_FORMAT_BIN);
+*day = date.Date;
+*month = date.Month;
+*year = date.Year;
+}
+
