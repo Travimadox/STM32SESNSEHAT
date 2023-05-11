@@ -1,4 +1,6 @@
 # Setting up the SENSEHAT for the first time.
+### Preliminary:
+To set up the STM32 peripherals check:[Setting up STM32 peripherals](https://github.com/Travimadox/STM32SESNSEHAT/blob/main/Firmware/STM32SETUP.md)
 
 ### STEP1. Powering and setting up the SENSEHAT hardware.
 **CAUTION:** Ensure that the power source supplies at least 5V at 1A.
