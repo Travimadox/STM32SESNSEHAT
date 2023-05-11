@@ -1,4 +1,11 @@
 # Setting up the SENSEHAT for the first time.
+## Requirements:
+### Hardware Requirements
+Coming soon
+
+### Software Requirements
+Coming soon
+
 ### Preliminary:
 To set up the STM32 peripherals check:[Setting up STM32 peripherals](https://github.com/Travimadox/STM32SESNSEHAT/blob/main/Firmware/STM32SETUP.md)
 
