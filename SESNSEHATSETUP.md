@@ -56,4 +56,4 @@ Follow this steps to set up you SENSEHAT.
 
 **Video to be uploaded soon**
 
-Should you encounter problems while setting up your SENSEHAT, please visit our [FAQ]() or alternately watch the video on [How to setup SENSEHAT]().
+Should you encounter problems while setting up your SENSEHAT, please visit our [FAQ](FAQ.md) or alternately watch the video on [How to setup SENSEHAT]().
