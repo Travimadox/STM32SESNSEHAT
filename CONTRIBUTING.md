@@ -48,7 +48,7 @@ If your contribution adds new features or significantly alters existing function
 
 If you have any questions or need assistance during the contribution process, please feel free to reach out to the project maintainers:
 
-- Rumbizdai Mashumba: MSHRUM@myuct.ac.za
+- Rumbizdai Mashumba: MSHRUM006@myuct.ac.za
 - Phomolo Makina: MKNPHO002@myuct.ac.za
 - Travimadox Webb: WBBTRA001@myuct.ac.za
 
