@@ -30,7 +30,7 @@ However, the repository is also compatible with several other IDEs. If you are c
     
 - Keil MicroVision: 
   You can download it [here](https://www.keil.com/)
-  **Note**: This isa paid IDE,however a free version is also available.
+  **Note**: This is a paid IDE,however a free version is also available.
 
 Please note, the codebase is written in C. However, contributions in C++ or Embedded Rust are welcome.
 
