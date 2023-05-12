@@ -22,7 +22,7 @@ In addition, the sensor data can be used to make critical decisions about contro
 
 ## Getting Started
 
-To get started with the Imperium Environmental Monitoring HAT, simply connect it to your STM32 microcontroller using the provided pins. Then, download our library and follow the included instructions to begin collecting data. the detailed set-up instructions can be found here: [Setup](SESNSEHATSETUP.md)
+To get started with the Imperium Environmental Monitoring HAT, simply connect it to your STM32 microcontroller using the provided pins. Then, download our library and follow the included instructions to begin collecting data. Detailed set-up instructions can be found here: [Setup](SESNSEHATSETUP.md)
 
 ## Customization
 
