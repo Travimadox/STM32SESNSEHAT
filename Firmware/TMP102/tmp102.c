@@ -9,6 +9,7 @@
  */
 
 #include "tmp102.h"
+#include <math.h>
 
 // I2C handle for communication with the sensor
 static I2C_HandleTypeDef *i2c_handle;
