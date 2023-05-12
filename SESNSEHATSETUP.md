@@ -34,6 +34,14 @@ However, the repository is also compatible with several other IDEs. If you are c
 
 Please note, the codebase is written in C. However, contributions in C++ or Embedded Rust are welcome.
 
+**Software terminal emulator**
+
+The examples provided here are based on the Tera Term ,however the other software terminal emulators should work too.
+- Tera Term 
+- Real Term
+- PuTTY
+- OpenSSH
+- KiTTY
 
 ## Setting up STM32 Peripherals:
 To set up the STM32 peripherals check:[Setting up STM32 peripherals](https://github.com/Travimadox/STM32SESNSEHAT/blob/main/Firmware/STM32SETUP.md)
