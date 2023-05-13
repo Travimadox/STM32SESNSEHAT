@@ -14,6 +14,9 @@
   * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
+  * @author Rumbidzai Mashumba, Phomolo Makina, Travimadox Webb
+  * @company Imperium LLC
+  * @date 13th of May 2023
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
