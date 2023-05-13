@@ -1,0 +1,2 @@
+../Core/Src/tmp102.c:23:19:TMP102_Init	40	static
+../Core/Src/tmp102.c:43:7:TMP102_ReadTemperature	40	static

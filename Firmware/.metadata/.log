@@ -1,0 +1,18 @@
+!SESSION 2023-05-13 12:01:43.180 -----------------------------------------------
+eclipse.buildId=Version 1.11.0
+java.version=11.0.16
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_ZA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-05-13 12:02:40.153
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-05-13 12:02:40.245
+!MESSAGE Log4j initialized with config file C:\Users\User\OneDrive - University of Cape Town\Desktop\EEE3088F\GITHUB\STM32SESNSEHAT\Firmware\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-05-13 12:02:49.916
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-05-13 12:04:33.452
+!MESSAGE Indexed 'SENSEHAT' (19 sources, 81 headers) in 3.71 sec: 4,127 declarations; 22,553 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0075%)
