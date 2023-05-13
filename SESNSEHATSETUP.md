@@ -84,13 +84,13 @@ Follow this steps to set up you SENSEHAT.
   6. Run the code!
   7. Follow the steps **2-to-6** above to test for other libraries.
 
-## Step 4: Implementation of Sensehat full Functionality
+## Step 4: Implementation of Sensehat Full Functionality
 **Still being worked on**
   1. Connect the SENSEHAT to the PC via a USB cable. The debugger light should go on as shown below.
   
   ![Debugger](https://imgur.com/ZuuBLmn.jpg)
   
-  2. Download the intergrating drivers here: [STM32SenseHatDriver]().
+  2. Download the intergrating drivers here: [STM32SenseHatDriver](https://github.com/Travimadox/STM32SESNSEHAT/tree/main/Firmware/SENSEHAT).
   3. Open the files in STM32cubeIDE by following steps 2-to-5 in `Step3` above.
   4. Build and run the main.c file. You should see the debugger light flashing, wait till the following displays in console.
   
