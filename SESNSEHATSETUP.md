@@ -37,11 +37,10 @@ Please note, the codebase is written in C. However, contributions in C++ or Embe
 **Software terminal emulator**
 
 The examples provided here are based on the Tera Term ,however the other software terminal emulators should work too.
-- Tera Term 
-- Real Term
-- PuTTY
-- OpenSSH
-- KiTTY
+- Tera Term [Download](https://download.cnet.com/Tera-Term/3000-2094_4-75766675.html)
+- Real Term [Download](https://realterm.sourceforge.io/index.html#downloads_Download)
+- PuTTY [Download](https://www.putty.org/)
+- KiTTY [Download](https://kitty.en.lo4d.com/windows)
 
 ## Setting up STM32 Peripherals:
 To set up the STM32 peripherals check:[Setting up STM32 peripherals](https://github.com/Travimadox/STM32SESNSEHAT/blob/main/Firmware/STM32SETUP.md)
