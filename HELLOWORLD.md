@@ -8,7 +8,7 @@ This program is designed to read data from temperature sensors and an analog lig
 For an in-depth guide on how to setup your hardware and software, kindly visit this link: [Setup Guide](SESNSEHATSETUP.md).
 
 ### Step 2: Download the HelloWorld Drivers
-You can find and download the necessary HelloWorld drivers for this project from the following link: [HelloWorldDrivers](https://github.com/Travimadox/STM32SESNSEHAT/tree/main/Firmware)
+You can find and download the necessary HelloWorld drivers for this project from the following link: [HelloWorldDrivers](https://github.com/Travimadox/STM32SESNSEHAT/blob/main/Firmware/SENSEHATHELLOWORLD.zip)
 
 ### Step 3: Import the Project into STM32 CubeIDE
 If you're unsure of how to import the project, refer to the following guides:
