@@ -174,6 +174,8 @@ int main(void)
       }
 
 
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -182,12 +184,18 @@ int main(void)
   {
 	  //Back -up for demo in case interrupts dont work
 	  //Remember to implement function to update the usb_plugged flag
-	  /*if(usb_plugged){
+	  if(usb_plugged){
 		  read_and_transmit_all_data();
 	  }
 	  else{
 		  read_and_store_data();
-	  }*/
+	  }
+
+	  HAL_Delay(10000);
+
+
+
+
 
 
     /* USER CODE END WHILE */
@@ -435,7 +443,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 10000;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 28800;
+  htim2.Init.Period = 144000;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -509,11 +517,24 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
+  /*Configure GPIO pin : PA0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   /*Configure GPIO pin : PB10 */
   GPIO_InitStruct.Pin = GPIO_PIN_10;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI0_1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_1_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI4_15_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);
 
 }
 
@@ -530,7 +551,7 @@ The function checks if the EEPROM is full before performing any write operations
 
 @note If the EEPROM is full, the function does not perform any write operations.
 */
-void read_and_store_data(void)
+/*void read_and_store_data(void)
 {
     // If the EEPROM is full, don't perform any write operations
     if(eeprom_full) {
@@ -588,6 +609,7 @@ void read_and_store_data(void)
 	        } else {
 	            current_page++;
 	        }
+
 	    } else {
 	        // EEPROM is full, set the flag to prevent further writing
 	        eeprom_full = true;
@@ -595,7 +617,75 @@ void read_and_store_data(void)
 
 
 
+
+}*/
+
+void read_and_store_data(void)
+{
+    // If the EEPROM is full, don't perform any write operations
+    if(eeprom_full) {
+        return;
+    }
+	  //Read Light Intensity
+	  light_intensity = LDR_ReadAnalogLightIntensity(&hadc);
+
+	  int light_whole = (int)light_intensity;
+	  int light_frac = (int)(100 * (light_intensity - light_whole));
+	  sprintf(light_string, "%d.%02d", light_whole, light_frac);
+
+	  //Read Temperature
+	  temperature = TMP102_ReadTemperature(&hi2c1);
+	  int temp_whole = (int)temperature;
+	  int temp_frac = (int)(100 * (temperature - temp_whole));
+	  sprintf(temp_string, "%d.%02d", temp_whole, temp_frac);
+
+	   //Get the date
+	   RTC_GetDate(&hrtc, &dayread, &monthread, &yearread);
+	   // Convert the integers to a string
+	   sprintf(date_string, "%02d-%02d-%02d", dayread, monthread, yearread);
+
+	   //Get the time
+	   status = RTC_GetTime(&hrtc, &read_hours, &read_minutes, &read_seconds);
+	   if (status != HAL_OK) {
+	       // Handle error
+	   }
+
+	   // Convert the integers to a string
+	   sprintf(time_string, "%02d:%02d:%02d", read_hours, read_minutes, read_seconds);
+
+	    // Calculate the size of the message
+	    uint16_t message_size = strlen(light_string) + strlen(temp_string) + strlen(date_string) + strlen(time_string) + 20; // 20 for the 'Date: ','Time: ','Temp: ','Light: ' and '\r\n'
+
+	    // Create a complete message string
+	    char message[message_size + 1]; // +1 for the null terminator
+	    sprintf(message, "Date: %s Time: %s Temp: %s Light: %s\r\n", date_string, time_string, temp_string, light_string);
+
+	    // Check if the message can fit into the current page. If not, go to the next page.
+	    if(message_size > PAGE_SIZE) {
+	        current_page++;
+	    }
+
+	    // Check if there's enough space left in the EEPROM
+	    if(current_page < PAGE_NUM) {
+	        // Write the message to the EEPROM
+	        EEPROM_Write(current_page, 0, (uint8_t *)message, message_size);
+
+	        // If the message size is less than the page size, the next write operation will start from where it left.
+	        // Otherwise, the next write operation will start from the next page.
+	        if(message_size < PAGE_SIZE) {
+	            current_page += message_size / PAGE_SIZE;
+	        } else {
+	            current_page++;
+	        }
+
+	    } else {
+	        // EEPROM is full, set the flag to prevent further writing
+	        eeprom_full = true;
+	    }
 }
+
+
+
 
 /**
 
@@ -607,12 +697,12 @@ There is a delay between each UART transmission to ensure proper data transmissi
       If the EEPROM is not filled with data, this function may transmit garbage values.
 */
 
-void read_and_transmit_all_data(void)
+/*void read_and_transmit_all_data(void)
 {
     // If the EEPROM is not full, don't perform any read operations
     /*if(!eeprom_full) {
         return;
-    }*/
+    }
 
     // Buffer to hold the data read from the EEPROM
     uint8_t data[PAGE_SIZE];
@@ -625,10 +715,55 @@ void read_and_transmit_all_data(void)
         // Transmit the data over UART
         HAL_UART_Transmit(&huart1, data, strlen((char *)data), 1000);
 
+
+        // Delay between each UART transmission
+
+        HAL_Delay(10);
+    }
+
+    //Erase everything after transmission
+    for (int i=0; i<512; i++)
+    {
+  	  EEPROM_PageErase(i);
+    }
+
+
+} */
+
+
+void read_and_transmit_all_data(void)
+{
+    // If the EEPROM is not full, don't perform any read operations
+    /*if(!eeprom_full) {
+        return;
+    }*/
+
+    // Buffer to hold the data read from the EEPROM
+    uint8_t data[PAGE_SIZE + 1];  // +1 for the null terminator
+
+    // Loop through all pages
+    for(uint16_t page = 0; page < PAGE_NUM; page++) {
+        // Read data from the current page of the EEPROM
+        EEPROM_Read(page, 0, data, PAGE_SIZE);
+
+        // Ensure that the data is null-terminated
+        data[PAGE_SIZE] = '\0';
+
+        // Transmit the data over UART
+        HAL_UART_Transmit(&huart1, data, strlen((char *)data), 1000);
+
         // Delay between each UART transmission
         HAL_Delay(10);
     }
+
+    //Erase everything after transmission
+    for (int i=0; i<512; i++)
+    {
+  	  EEPROM_PageErase(i);
+    }
 }
+
+
 
 /**
 
@@ -642,9 +777,10 @@ When this interrupt occurs, the function starts transmitting all the stored data
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	// If The INT Source Is EXTI 10 (PB10 Pin) indicating USB has been plugged in
 
-	if(GPIO_Pin == GPIO_PIN_10){
+	if(GPIO_Pin == GPIO_PIN_0){
 		//Start transmitting data
-		read_and_transmit_all_data();
+		//read_and_transmit_all_data();
+		usb_plugged = true;
 
 	}
 }
@@ -658,11 +794,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
  * It specifically handles the callback for the timer used to track the elapsed time of 60 seconds.
  * When this callback is triggered, the function reads data from the sensors and stores it.
  */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
+/*void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {
 	//if 60s have elapsed we read data from the sensors
+
 	read_and_store_data();
-}
+}*/
 
 
 
