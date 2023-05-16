@@ -111,7 +111,8 @@ static void MX_RTC_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
-
+void read_and_transmit_all_data(void);
+void read_and_store_data(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -192,6 +193,7 @@ int main(void)
 	  }
 
 	  HAL_Delay(10000);
+
 
 
 
@@ -654,19 +656,29 @@ void read_and_store_data(void)
 	   sprintf(time_string, "%02d:%02d:%02d", read_hours, read_minutes, read_seconds);
 
 	    // Calculate the size of the message
-	    uint16_t message_size = strlen(light_string) + strlen(temp_string) + strlen(date_string) + strlen(time_string) + 20; // 20 for the 'Date: ','Time: ','Temp: ','Light: ' and '\r\n'
+	    //uint16_t message_size = strlen(light_string) + strlen(temp_string) + strlen(date_string) + strlen(time_string) + 20; // 20 for the 'Date: ','Time: ','Temp: ','Light: ' and '\r\n'
 
 	    // Create a complete message string
-	    char message[message_size + 1]; // +1 for the null terminator
+	    //char message[message_size + 1]; // +1 for the null terminator
+
+	    char message[64];
 	    sprintf(message, "Date: %s Time: %s Temp: %s Light: %s\r\n", date_string, time_string, temp_string, light_string);
 
 	    // Check if the message can fit into the current page. If not, go to the next page.
-	    if(message_size > PAGE_SIZE) {
-	        current_page++;
+	    if(current_page < PAGE_NUM) {
+	    	// Write the message to the EEPROM
+	    	EEPROM_Write(current_page, 0, (uint8_t *)message, strlen(message));
+	    	current_page++;
+
+	    }
+
+	    else{
+	    	eeprom_full = true;
 	    }
 
 	    // Check if there's enough space left in the EEPROM
-	    if(current_page < PAGE_NUM) {
+	    /*
+	     * if(current_page < PAGE_NUM) {
 	        // Write the message to the EEPROM
 	        EEPROM_Write(current_page, 0, (uint8_t *)message, message_size);
 
@@ -682,6 +694,7 @@ void read_and_store_data(void)
 	        // EEPROM is full, set the flag to prevent further writing
 	        eeprom_full = true;
 	    }
+	     */
 }
 
 
@@ -750,7 +763,8 @@ void read_and_transmit_all_data(void)
         data[PAGE_SIZE] = '\0';
 
         // Transmit the data over UART
-        HAL_UART_Transmit(&huart1, data, strlen((char *)data), 1000);
+        HAL_UART_Transmit(&huart1, data, PAGE_SIZE, 1000);
+
 
         // Delay between each UART transmission
         HAL_Delay(10);
@@ -761,6 +775,7 @@ void read_and_transmit_all_data(void)
     {
   	  EEPROM_PageErase(i);
     }
+    eeprom_full = false;
 }
 
 
