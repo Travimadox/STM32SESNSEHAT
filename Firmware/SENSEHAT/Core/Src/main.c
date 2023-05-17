@@ -61,10 +61,10 @@ UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 // Change these values to set time and date each time the stm32 goes off
-uint8_t hours = 07;
-uint8_t minutes = 16;
+uint8_t hours = 16;
+uint8_t minutes = 19;
 uint8_t seconds = 0;
-uint8_t day = 12;
+uint8_t day = 17;
 uint8_t month = 5;
 uint8_t year = 23;
 
@@ -113,6 +113,7 @@ static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 void read_and_transmit_all_data(void);
 void read_and_store_data(void);
+void check_GPIO_state(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -185,7 +186,9 @@ int main(void)
   {
 	  //Back -up for demo in case interrupts dont work
 	  //Remember to implement function to update the usb_plugged flag
+	  check_GPIO_state();
 	  if(usb_plugged){
+		  HAL_Delay(30000);
 		  read_and_transmit_all_data();
 	  }
 	  else{
@@ -519,24 +522,11 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
-  /*Configure GPIO pin : PA0 */
-  GPIO_InitStruct.Pin = GPIO_PIN_0;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : PB10 */
-  GPIO_InitStruct.Pin = GPIO_PIN_10;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  /*Configure GPIO pin : PB2 */
+  GPIO_InitStruct.Pin = GPIO_PIN_2;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-  /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI0_1_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI0_1_IRQn);
-
-  HAL_NVIC_SetPriority(EXTI4_15_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);
 
 }
 
@@ -780,6 +770,7 @@ void read_and_transmit_all_data(void)
 
 
 
+
 /**
 
 @brief GPIO EXTI callback function
@@ -792,14 +783,35 @@ When this interrupt occurs, the function starts transmitting all the stored data
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	// If The INT Source Is EXTI 10 (PB10 Pin) indicating USB has been plugged in
 
-	if(GPIO_Pin == GPIO_PIN_0){
+	if(GPIO_Pin == GPIO_PIN_2){
 		//Start transmitting data
 		//read_and_transmit_all_data();
 		usb_plugged = true;
+		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_11);
+
 
 	}
 }
 
+
+void check_GPIO_state(void)
+{
+    GPIO_PinState PinState;
+
+    // Check the state of the GPIO pin
+    PinState = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2);
+
+    if (PinState == GPIO_PIN_SET)
+    {
+        // If the pin is set, then do something here
+    	usb_plugged = true;
+    }
+    else if (PinState == GPIO_PIN_RESET)
+    {
+        // If the pin is reset, then do something else here
+    	usb_plugged = false;
+    }
+}
 
 
 /**
