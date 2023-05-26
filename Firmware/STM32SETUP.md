@@ -72,9 +72,9 @@ Change the HCLK to 48MHz as shown below:
 
 # Step 5: .Setting up UART peripherals in STM32CubeIDE
 
-Coming soon
+Visit [Deep Blue Embedded](https://deepbluembedded.com/stm32-timers-tutorial-hardware-timers-explained/)
 
 # Step 6: .Setting up Timer Interrupts in STM32CubeIDE
 
-Coming soon
+Visit [Deep Blue Embedded](https://deepbluembedded.com/stm32-usart-uart-tutorial/)
 
