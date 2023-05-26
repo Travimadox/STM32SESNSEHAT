@@ -195,7 +195,7 @@ int main(void)
 		  read_and_store_data();
 	  }
 
-	  HAL_Delay(10000);
+	  HAL_Delay(5000);
 
 
 

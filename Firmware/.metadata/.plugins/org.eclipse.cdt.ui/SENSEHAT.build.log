@@ -1,10 +1,10 @@
-18:45:37 **** Incremental Build of configuration Debug for project SENSEHAT ****
+14:24:29 **** Incremental Build of configuration Debug for project SENSEHAT ****
 make -j8 all 
 arm-none-eabi-size   SENSEHAT.elf 
    text	   data	    bss	    dec	    hex	filename
-  26324	    128	   2056	  28508	   6f5c	SENSEHAT.elf
+  26324	    124	   2060	  28508	   6f5c	SENSEHAT.elf
 Finished building: default.size.stdout
  
 
-18:45:37 Build Finished. 0 errors, 0 warnings. (took 820ms)
+14:24:29 Build Finished. 0 errors, 0 warnings. (took 697ms)
 

@@ -1,14 +1,46 @@
-18:45:12 **** Incremental Build of configuration Debug for project SENSEHAT ****
+14:24:11 **** Incremental Build of configuration Debug for project SENSEHAT ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F051x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'read_and_store_data':
+../Core/Src/main.c:626:4: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  626 |    sprintf(light_string, "%d.%02d", light_whole, light_frac);
+      |    ^~~~~~~
+../Core/Src/main.c:626:4: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:35:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   34 | #include <stdbool.h>
+  +++ |+#include <stdio.h>
+   35 | /* USER CODE END Includes */
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:706:5: warning: "/*" within comment [-Wcomment]
+  706 |     /*if(!eeprom_full) {
+      |      
+../Core/Src/main.c: In function 'read_and_store_data':
+../Core/Src/main.c:655:60: warning: '
+   ' directive writing 2 bytes into a region of size between 0 and 36 [-Wformat-overflow=]
+  655 |      sprintf(message, "Date: %s Time: %s Temp: %s Light: %s\r\n", date_string, time_string, temp_string, light_string);
+      |                                                            ^~~~
+../Core/Src/main.c:655:6: note: 'sprintf' output between 31 and 67 bytes into a destination of size 64
+  655 |      sprintf(message, "Date: %s Time: %s Temp: %s Light: %s\r\n", date_string, time_string, temp_string, light_string);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:175:8: warning: '__builtin_memcpy' writing 11 bytes into a region of size 10 overflows the destination [-Wstringop-overflow=]
+  175 |        strcpy((char*)temp_string,"Error Tx\r\n");
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "SENSEHAT.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\User\OneDrive - University of Cape Town\Desktop\EEE3088F\GITHUB\STM32SESNSEHAT\Firmware\SENSEHAT\STM32F051C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SENSEHAT.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SENSEHAT.elf
+ 
 arm-none-eabi-size   SENSEHAT.elf 
+arm-none-eabi-objdump -h -S  SENSEHAT.elf  > "SENSEHAT.list"
    text	   data	    bss	    dec	    hex	filename
-  26324	    128	   2056	  28508	   6f5c	SENSEHAT.elf
+  26324	    124	   2060	  28508	   6f5c	SENSEHAT.elf
 Finished building: default.size.stdout
  
-18:45:37 **** Incremental Build of configuration Debug for project SENSEHAT ****
+Finished building: SENSEHAT.list
+ 
+14:24:29 **** Incremental Build of configuration Debug for project SENSEHAT ****
 make -j8 all 
 arm-none-eabi-size   SENSEHAT.elf 
    text	   data	    bss	    dec	    hex	filename
-  26324	    128	   2056	  28508	   6f5c	SENSEHAT.elf
+  26324	    124	   2060	  28508	   6f5c	SENSEHAT.elf
 Finished building: default.size.stdout
  

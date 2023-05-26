@@ -61,10 +61,10 @@ UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 // Change these values to set time and date each time the stm32 goes off
-uint8_t hours = 14;
-uint8_t minutes = 00;
+uint8_t hours = 16;
+uint8_t minutes = 19;
 uint8_t seconds = 0;
-uint8_t day = 19;
+uint8_t day = 17;
 uint8_t month = 5;
 uint8_t year = 23;
 

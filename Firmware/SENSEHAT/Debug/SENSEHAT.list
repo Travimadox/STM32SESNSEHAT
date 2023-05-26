@@ -9,41 +9,41 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   2 .rodata       00000108  080065cc  080065cc  000165cc  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  080066d4  080066d4  00020078  2**0
+  3 .ARM.extab    00000000  080066d4  080066d4  00020074  2**0
                   CONTENTS
-  4 .ARM          00000000  080066d4  080066d4  00020078  2**0
+  4 .ARM          00000000  080066d4  080066d4  00020074  2**0
                   CONTENTS
-  5 .preinit_array 00000000  080066d4  080066d4  00020078  2**0
+  5 .preinit_array 00000000  080066d4  080066d4  00020074  2**0
                   CONTENTS, ALLOC, LOAD, DATA
   6 .init_array   00000004  080066d4  080066d4  000166d4  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   7 .fini_array   00000004  080066d8  080066d8  000166d8  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         00000078  20000000  080066dc  00020000  2**2
+  8 .data         00000074  20000000  080066dc  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00000204  20000078  08006754  00020078  2**2
+  9 .bss          00000208  20000074  08006750  00020074  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  2000027c  08006754  0002027c  2**0
+ 10 ._user_heap_stack 00000604  2000027c  08006750  0002027c  2**0
                   ALLOC
- 11 .ARM.attributes 00000028  00000000  00000000  00020078  2**0
+ 11 .ARM.attributes 00000028  00000000  00000000  00020074  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0001439d  00000000  00000000  000200a0  2**0
+ 12 .debug_info   0001439d  00000000  00000000  0002009c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 000029a6  00000000  00000000  0003443d  2**0
+ 13 .debug_abbrev 000029a6  00000000  00000000  00034439  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00001150  00000000  00000000  00036de8  2**3
+ 14 .debug_aranges 00001150  00000000  00000000  00036de0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 00001028  00000000  00000000  00037f38  2**3
+ 15 .debug_ranges 00001028  00000000  00000000  00037f30  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00014448  00000000  00000000  00038f60  2**0
+ 16 .debug_macro  00014448  00000000  00000000  00038f58  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00016326  00000000  00000000  0004d3a8  2**0
+ 17 .debug_line   00016326  00000000  00000000  0004d3a0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00079e5c  00000000  00000000  000636ce  2**0
+ 18 .debug_str    00079e5c  00000000  00000000  000636c6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000dd52a  2**0
+ 19 .comment      00000050  00000000  00000000  000dd522  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00004350  00000000  00000000  000dd57c  2**2
+ 20 .debug_frame  00004350  00000000  00000000  000dd574  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -63,7 +63,7 @@ Disassembly of section .text:
  80000d6:	2301      	movs	r3, #1
  80000d8:	7023      	strb	r3, [r4, #0]
  80000da:	bd10      	pop	{r4, pc}
- 80000dc:	20000078 	.word	0x20000078
+ 80000dc:	20000074 	.word	0x20000074
  80000e0:	00000000 	.word	0x00000000
  80000e4:	080065b4 	.word	0x080065b4
 
@@ -79,7 +79,7 @@ Disassembly of section .text:
  80000f8:	bd10      	pop	{r4, pc}
  80000fa:	46c0      	nop			; (mov r8, r8)
  80000fc:	00000000 	.word	0x00000000
- 8000100:	2000007c 	.word	0x2000007c
+ 8000100:	20000078 	.word	0x20000078
  8000104:	080065b4 	.word	0x080065b4
 
 08000108 <strlen>:
@@ -1810,7 +1810,7 @@ void EEPROM_Write(uint16_t page, uint16_t offset, uint8_t *data, uint16_t size)
  8000e22:	b00b      	add	sp, #44	; 0x2c
  8000e24:	bdf0      	pop	{r4, r5, r6, r7, pc}
  8000e26:	46c0      	nop			; (mov r8, r8)
- 8000e28:	200000dc 	.word	0x200000dc
+ 8000e28:	200000d8 	.word	0x200000d8
 
 08000e2c <EEPROM_Read>:
   * @param  data: Pointer to the data to write in bytes.
@@ -1983,7 +1983,7 @@ void EEPROM_Read(uint16_t page, uint16_t offset, uint8_t *data, uint16_t size)
  8000f4a:	46bd      	mov	sp, r7
  8000f4c:	b00b      	add	sp, #44	; 0x2c
  8000f4e:	bdf0      	pop	{r4, r5, r6, r7, pc}
- 8000f50:	200000dc 	.word	0x200000dc
+ 8000f50:	200000d8 	.word	0x200000d8
 
 08000f54 <EEPROM_PageErase>:
   * @param  page: Number of page to erase
@@ -2046,7 +2046,7 @@ void EEPROM_PageErase(uint16_t page)
  8000fa6:	b014      	add	sp, #80	; 0x50
  8000fa8:	bdb0      	pop	{r4, r5, r7, pc}
  8000faa:	46c0      	nop			; (mov r8, r8)
- 8000fac:	200000dc 	.word	0x200000dc
+ 8000fac:	200000d8 	.word	0x200000d8
 
 08000fb0 <LDR_Init>:
 static float c;
@@ -2070,9 +2070,9 @@ void LDR_Init(void) {
  8000fc2:	46bd      	mov	sp, r7
  8000fc4:	bd80      	pop	{r7, pc}
  8000fc6:	46c0      	nop			; (mov r8, r8)
- 8000fc8:	20000094 	.word	0x20000094
+ 8000fc8:	20000090 	.word	0x20000090
  8000fcc:	402b3333 	.word	0x402b3333
- 8000fd0:	20000098 	.word	0x20000098
+ 8000fd0:	20000094 	.word	0x20000094
  8000fd4:	c285c28f 	.word	0xc285c28f
 
 08000fd8 <LDR_ReadADC>:
@@ -2165,8 +2165,8 @@ float LDR_ReadAnalogLightIntensity(ADC_HandleTypeDef *hadc) {
  8001052:	b004      	add	sp, #16
  8001054:	bd80      	pop	{r7, pc}
  8001056:	46c0      	nop			; (mov r8, r8)
- 8001058:	20000094 	.word	0x20000094
- 800105c:	20000098 	.word	0x20000098
+ 8001058:	20000090 	.word	0x20000090
+ 800105c:	20000094 	.word	0x20000094
 
 08001060 <main>:
 /**
@@ -2292,14 +2292,14 @@ int main(void)
 	  check_GPIO_state();
  80010f6:	e7eb      	b.n	80010d0 <main+0x70>
  80010f8:	20000000 	.word	0x20000000
- 80010fc:	20000001 	.word	0x20000001
- 8001100:	20000220 	.word	0x20000220
- 8001104:	20000130 	.word	0x20000130
+ 80010fc:	2000021c 	.word	0x2000021c
+ 8001100:	2000021d 	.word	0x2000021d
+ 8001104:	2000012c 	.word	0x2000012c
  8001108:	2000025a 	.word	0x2000025a
- 800110c:	20000002 	.word	0x20000002
- 8001110:	20000003 	.word	0x20000003
- 8001114:	20000004 	.word	0x20000004
- 8001118:	200000dc 	.word	0x200000dc
+ 800110c:	20000001 	.word	0x20000001
+ 8001110:	20000002 	.word	0x20000002
+ 8001114:	20000003 	.word	0x20000003
+ 8001118:	200000d8 	.word	0x200000d8
  800111c:	20000244 	.word	0x20000244
  8001120:	080065cc 	.word	0x080065cc
  8001124:	2000025f 	.word	0x2000025f
@@ -2599,7 +2599,7 @@ static void MX_ADC_Init(void)
  80012c2:	b004      	add	sp, #16
  80012c4:	bd80      	pop	{r7, pc}
  80012c6:	46c0      	nop			; (mov r8, r8)
- 80012c8:	2000009c 	.word	0x2000009c
+ 80012c8:	20000098 	.word	0x20000098
  80012cc:	40012400 	.word	0x40012400
 
 080012d0 <MX_I2C1_Init>:
@@ -2698,7 +2698,7 @@ static void MX_I2C1_Init(void)
  800133e:	46c0      	nop			; (mov r8, r8)
  8001340:	46bd      	mov	sp, r7
  8001342:	bd80      	pop	{r7, pc}
- 8001344:	200000dc 	.word	0x200000dc
+ 8001344:	200000d8 	.word	0x200000d8
  8001348:	40005400 	.word	0x40005400
  800134c:	2000090e 	.word	0x2000090e
 
@@ -2846,7 +2846,7 @@ static void MX_RTC_Init(void)
  8001406:	b006      	add	sp, #24
  8001408:	bd80      	pop	{r7, pc}
  800140a:	46c0      	nop			; (mov r8, r8)
- 800140c:	20000130 	.word	0x20000130
+ 800140c:	2000012c 	.word	0x2000012c
  8001410:	40002800 	.word	0x40002800
 
 08001414 <MX_TIM2_Init>:
@@ -2965,7 +2965,7 @@ static void MX_TIM2_Init(void)
  80014ae:	46bd      	mov	sp, r7
  80014b0:	b006      	add	sp, #24
  80014b2:	bd80      	pop	{r7, pc}
- 80014b4:	20000150 	.word	0x20000150
+ 80014b4:	2000014c 	.word	0x2000014c
  80014b8:	00002710 	.word	0x00002710
  80014bc:	00023280 	.word	0x00023280
 
@@ -3042,7 +3042,7 @@ static void MX_USART1_UART_Init(void)
  8001512:	46c0      	nop			; (mov r8, r8)
  8001514:	46bd      	mov	sp, r7
  8001516:	bd80      	pop	{r7, pc}
- 8001518:	20000198 	.word	0x20000198
+ 8001518:	20000194 	.word	0x20000194
  800151c:	40013800 	.word	0x40013800
 
 08001520 <MX_GPIO_Init>:
@@ -3375,23 +3375,23 @@ void read_and_store_data(void)
  8001738:	bd90      	pop	{r4, r7, pc}
  800173a:	46c0      	nop			; (mov r8, r8)
  800173c:	2000025e 	.word	0x2000025e
- 8001740:	2000009c 	.word	0x2000009c
+ 8001740:	20000098 	.word	0x20000098
  8001744:	2000023c 	.word	0x2000023c
  8001748:	42c80000 	.word	0x42c80000
  800174c:	080065d8 	.word	0x080065d8
  8001750:	20000250 	.word	0x20000250
- 8001754:	200000dc 	.word	0x200000dc
+ 8001754:	200000d8 	.word	0x200000d8
  8001758:	20000240 	.word	0x20000240
  800175c:	20000244 	.word	0x20000244
  8001760:	2000022f 	.word	0x2000022f
  8001764:	2000022e 	.word	0x2000022e
  8001768:	2000022d 	.word	0x2000022d
- 800176c:	20000130 	.word	0x20000130
+ 800176c:	2000012c 	.word	0x2000012c
  8001770:	080065e0 	.word	0x080065e0
  8001774:	20000230 	.word	0x20000230
- 8001778:	20000223 	.word	0x20000223
- 800177c:	20000222 	.word	0x20000222
- 8001780:	20000221 	.word	0x20000221
+ 8001778:	20000220 	.word	0x20000220
+ 800177c:	2000021f 	.word	0x2000021f
+ 8001780:	2000021e 	.word	0x2000021e
  8001784:	2000025a 	.word	0x2000025a
  8001788:	080065f0 	.word	0x080065f0
  800178c:	20000224 	.word	0x20000224
@@ -3496,7 +3496,7 @@ void read_and_transmit_all_data(void)
  8001816:	b015      	add	sp, #84	; 0x54
  8001818:	bd90      	pop	{r4, r7, pc}
  800181a:	46c0      	nop			; (mov r8, r8)
- 800181c:	20000198 	.word	0x20000198
+ 800181c:	20000194 	.word	0x20000194
  8001820:	2000025e 	.word	0x2000025e
 
 08001824 <check_GPIO_state>:
@@ -4402,7 +4402,7 @@ void TIM2_IRQHandler(void)
  8001c9a:	46bd      	mov	sp, r7
  8001c9c:	bd80      	pop	{r7, pc}
  8001c9e:	46c0      	nop			; (mov r8, r8)
- 8001ca0:	20000150 	.word	0x20000150
+ 8001ca0:	2000014c 	.word	0x2000014c
 
 08001ca4 <_sbrk>:
  *
@@ -4737,11 +4737,11 @@ LoopForever:
   ldr r0, =_sdata
  8001e30:	20000000 	.word	0x20000000
   ldr r1, =_edata
- 8001e34:	20000078 	.word	0x20000078
+ 8001e34:	20000074 	.word	0x20000074
   ldr r2, =_sidata
  8001e38:	080066dc 	.word	0x080066dc
   ldr r2, =_sbss
- 8001e3c:	20000078 	.word	0x20000078
+ 8001e3c:	20000074 	.word	0x20000074
   ldr r4, =_ebss
  8001e40:	2000027c 	.word	0x2000027c
 
@@ -4863,9 +4863,9 @@ __weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
  8001ec6:	46bd      	mov	sp, r7
  8001ec8:	b003      	add	sp, #12
  8001eca:	bd90      	pop	{r4, r7, pc}
- 8001ecc:	20000008 	.word	0x20000008
- 8001ed0:	20000010 	.word	0x20000010
- 8001ed4:	2000000c 	.word	0x2000000c
+ 8001ecc:	20000004 	.word	0x20000004
+ 8001ed0:	2000000c 	.word	0x2000000c
+ 8001ed4:	20000008 	.word	0x20000008
 
 08001ed8 <HAL_IncTick>:
   * @note This function is declared as __weak to be overwritten in case of other 
@@ -4890,7 +4890,7 @@ __weak void HAL_IncTick(void)
  8001eee:	46bd      	mov	sp, r7
  8001ef0:	bd80      	pop	{r7, pc}
  8001ef2:	46c0      	nop			; (mov r8, r8)
- 8001ef4:	20000010 	.word	0x20000010
+ 8001ef4:	2000000c 	.word	0x2000000c
  8001ef8:	20000268 	.word	0x20000268
 
 08001efc <HAL_GetTick>:
@@ -4964,7 +4964,7 @@ __weak void HAL_Delay(uint32_t Delay)
  8001f4e:	b004      	add	sp, #16
  8001f50:	bd80      	pop	{r7, pc}
  8001f52:	46c0      	nop			; (mov r8, r8)
- 8001f54:	20000010 	.word	0x20000010
+ 8001f54:	2000000c 	.word	0x2000000c
 
 08001f58 <HAL_ADC_Init>:
   *         of structure "ADC_InitTypeDef".
@@ -6352,7 +6352,7 @@ HAL_StatusTypeDef HAL_ADC_ConfigChannel(ADC_HandleTypeDef* hadc, ADC_ChannelConf
  8002646:	46c0      	nop			; (mov r8, r8)
  8002648:	00001001 	.word	0x00001001
  800264c:	40012708 	.word	0x40012708
- 8002650:	20000008 	.word	0x20000008
+ 8002650:	20000004 	.word	0x20000004
  8002654:	000f4240 	.word	0x000f4240
  8002658:	ffbfffff 	.word	0xffbfffff
  800265c:	feffffff 	.word	0xfeffffff
@@ -6548,7 +6548,7 @@ static HAL_StatusTypeDef ADC_Enable(ADC_HandleTypeDef* hadc)
  800275c:	bd80      	pop	{r7, pc}
  800275e:	46c0      	nop			; (mov r8, r8)
  8002760:	80000017 	.word	0x80000017
- 8002764:	20000008 	.word	0x20000008
+ 8002764:	20000004 	.word	0x20000004
  8002768:	000f4240 	.word	0x000f4240
 
 0800276c <ADC_Disable>:
@@ -11594,7 +11594,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, ui
  8004294:	00001388 	.word	0x00001388
  8004298:	fffff8ff 	.word	0xfffff8ff
  800429c:	08006668 	.word	0x08006668
- 80042a0:	20000008 	.word	0x20000008
+ 80042a0:	20000004 	.word	0x20000004
 
 080042a4 <HAL_RCC_GetSysClockFreq>:
   *         right SYSCLK value. Otherwise, any configuration based on this function will be incorrect.
@@ -11749,7 +11749,7 @@ uint32_t HAL_RCC_GetHCLKFreq(void)
  800435a:	46bd      	mov	sp, r7
  800435c:	bd80      	pop	{r7, pc}
  800435e:	46c0      	nop			; (mov r8, r8)
- 8004360:	20000008 	.word	0x20000008
+ 8004360:	20000004 	.word	0x20000004
 
 08004364 <HAL_RCC_GetPCLK1Freq>:
   * @note   Each time PCLK1 changes, this function must be called to update the
@@ -16567,7 +16567,7 @@ static void UART_EndRxTransfer(UART_HandleTypeDef *huart)
  8005c7e:	6818      	ldr	r0, [r3, #0]
  8005c80:	4770      	bx	lr
  8005c82:	46c0      	nop			; (mov r8, r8)
- 8005c84:	20000014 	.word	0x20000014
+ 8005c84:	20000010 	.word	0x20000010
 
 08005c88 <__libc_init_array>:
  8005c88:	b570      	push	{r4, r5, r6, lr}
@@ -16639,7 +16639,7 @@ static void UART_EndRxTransfer(UART_HandleTypeDef *huart)
  8005d10:	4718      	bx	r3
  8005d12:	46c0      	nop			; (mov r8, r8)
  8005d14:	7fffffff 	.word	0x7fffffff
- 8005d18:	20000014 	.word	0x20000014
+ 8005d18:	20000010 	.word	0x20000010
  8005d1c:	ffff0208 	.word	0xffff0208
 
 08005d20 <__ssputs_r>:
