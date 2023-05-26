@@ -2,6 +2,7 @@
 
 The Imperium Environmental Monitoring HAT is a cutting-edge hardware accessory designed for use with STM32 microcontrollers. It is tailored for environmental monitoring and equipped with high-precision sensors for temperature and light. This allows for accurate data collection in various applications, including weather monitoring, room temperature monitoring, and greenhouse monitoring, providing invaluable insights into environmental conditions.
 
+![ImperiumSenseHAT](https://imgur.com/kfv0ZYG.jpg)
 ## Features
 
 - High-precision sensors for temperature, humidity, atmospheric pressure, and light
